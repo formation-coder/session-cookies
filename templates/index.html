@@ -7,8 +7,8 @@
         <form action="login.php" method="GET">
             <label for="Utilisateur"></label>
             <select name="user" id="user">
-                {% for user in users %}
-                        <option value="{{user.name}}">{{user.name}}</option>
+                {% for user, pass in users %}
+                        <option value="{{user}}">{{user}}</option>
                 {% endfor %}
             </select>
             <button type="submit">C'est moi ;)</button>
