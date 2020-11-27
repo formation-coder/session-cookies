@@ -1,5 +1,8 @@
 <?php
     $user = $_GET['user'];
+    // On vient de récupérer l'utilisateur, on créé sa session
+    session_start(); 
+    $_SESSION['utilisateur'] = $user; 
 ?>
 <!DOCTYPE html>
 <html>
