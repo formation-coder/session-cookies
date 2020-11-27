@@ -7,5 +7,5 @@
     session_unset(); // on "vide" les variable de session
     session_destroy(); // on détruit la session
 
-    //On rédirige vers la page d'acceuil
+    //On rédirige vers la page d'acceuille
     header('Location: index.php');

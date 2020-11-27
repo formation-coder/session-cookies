@@ -1,12 +1,13 @@
 <?php 
 
-    //On regarde de l'état de la session 
+    //On regarde de l'état de la session car on ne peut pas activer plusieurs fois une session (normalement)
     if(session_status() != PHP_SESSION_ACTIVE) {
         session_start(); 
     }
     $utilisateur = $_SESSION['utilisateur'];
 
     if(empty($utilisateur)) {
+        // Effectue une redirection vers le fichier index.php (car l'utilisateur n'est pas connecté)
         header('Location: index.php');
     }
 ?>
@@ -16,7 +17,6 @@
     </head>
     <body>
         <p>
-            <!-- pourquoi le nom de l'utilisateur ne s'affiche pas ? -->
             <?php echo "Toujours là " . $utilisateur . "?"; ?>
             <a href="deconnexion.php">Déconnexion</a>
         </p>
