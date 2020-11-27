@@ -17,8 +17,8 @@ function userOptionHTML($name) {
             <label for="Utilisateur"></label>
             <select name="user" id="user">
                 <?php 
-                    foreach($users as $user){
-                        echo userOptionHTML($user['name']);
+                    foreach($users as $user => $pass){
+                        echo userOptionHTML($user);
                     }
                 ?>
             </select>
