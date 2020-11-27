@@ -1,5 +1,7 @@
 <?php
     $user = $_GET['user'];
+    // On crée le cookie utilisateur qui contient comme valeur l'utilisateur choisi
+    setcookie("utilisateur", $user);
 ?>
 <!DOCTYPE html>
 <html>
