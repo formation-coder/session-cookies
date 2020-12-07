@@ -5,7 +5,8 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <form action="login.php" method="GET">
+        <!-- On a ici un formulaire qui sera traité par le fichier indiqué dans l'attribut action : login.php -->
+        <form action="login.php" method="POST">
             <label for="Utilisateur"></label>
             <select name="user" id="user">
                 {% for user, pass in users %}
@@ -13,8 +14,16 @@
                 {% endfor %}
             </select>
             <br>
+            <!-- ajout du champ de formulaire pour la saisie -->
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password" id="password" required> 
 
+            <!-- Le bouton submit permet l'envoi des données du formulaire au fichier login.php, 
+                donnant les valeurs des champs de formulaire de la façon suivante : 
+                - dans l'url avec un couple clé=valeur si on utilise la méthode GET dans le formulaire
+                - dans le 'body' de la requête HTTP si on utilise la méthode POST -->
             <button type="submit">C'est moi ;)</button>
+
         </form>
     </body>
 </html>
